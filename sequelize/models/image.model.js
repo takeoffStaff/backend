@@ -10,7 +10,8 @@ module.exports = (sequelize) => {
     },
     url: {
       type: DataTypes.STRING,
-    }
+    },
+    userId: DataTypes.INTEGER,
   }, {
     timestamps: false
   })

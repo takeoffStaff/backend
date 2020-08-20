@@ -15,6 +15,10 @@ module.exports = (sequelize) => {
     data: {
       type: DataTypes.JSON,
       allowNull: false,
+    },
+    articleId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
   }, {
     timestamps: false
