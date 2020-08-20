@@ -21,7 +21,9 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 
 const modelDefiners = [
   require('./models/user.model'),
-  require('./models/image.model')
+  require('./models/image.model'),
+  require('./models/article.model'),
+  require('./models/block.model'),
 ]
 
 // We define all models according to their files.

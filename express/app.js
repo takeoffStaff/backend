@@ -2,11 +2,13 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const authMiddleware = require('./middleware/auth.middleware')
 const uploadFileMiddleware = require('./middleware/uploadFile.middleware')
+const path = require('path')
 
 const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use('/public', express.static(path.join(__dirname, '/public')))
 
 function makeHandlerAwareOfAsyncErrors(handler) {
   return async function (req, res, next) {
@@ -21,6 +23,7 @@ function makeHandlerAwareOfAsyncErrors(handler) {
 // Define the standard REST APIs for each route (if they exist) [START]
 const routes = {
   users: require('./routes/users'),
+  articles: require('./routes/articles')
 }
 
 for (const [routeName, routeController] of Object.entries(routes)) {
