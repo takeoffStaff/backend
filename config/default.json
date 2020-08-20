@@ -1,0 +1,18 @@
+{
+  "port": "80",
+  "jwtSecret": "sugarman jwt secret key",
+  "baseUrl": "http://про-сто.com",
+  "dbConfig": {
+    "HOST": "localhost",
+    "USER": "root",
+    "PASSWORD": "pass123",
+    "DB": "takeoff",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  }
+}
