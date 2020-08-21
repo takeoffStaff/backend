@@ -12,7 +12,7 @@ async function create(req, res) {
       return res.status(400).json({ message: 'Вы должны загрузить изображение' })
     }
 
-    const image = await models.image.create({ url: req.file.path })
+    const image = await models.image.create({ url: '/' + req.file.path })
 
     return res.status(201).json(image)
   }
