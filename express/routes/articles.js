@@ -1,13 +1,15 @@
 const { models } = require('../../sequelize')
 const { getIdParam, getPagination, getPagingData } = require('../helpers')
+const { Op } = require('sequelize')
 
 // Get all articles [START]
 async function getAll(req, res) {
 
-  const { page, size } = req.query
+  const { page, size, title } = req.query
   const { limit, offset } = getPagination(page, size)
 
   const articles = await models.article.findAndCountAll({
+    where: { title: { [Op.like]: '%' + title + '%' } },
     limit,
     offset,
     order: [

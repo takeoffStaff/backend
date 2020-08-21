@@ -1,7 +1,6 @@
 {
   "port": "8080",
   "jwtSecret": "sugarman jwt secret key",
-  "baseUrl": "http://про-сто.com",
   "dbConfig": {
     "HOST": "localhost",
     "USER": "root",
